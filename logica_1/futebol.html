@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        function pulaLinha () {
+            document.write("<br><hr>");
+        }
+        function escreva (frase) {
+            document.write("<strong>" + frase + "</strong>");
+            pulaLinha();
+        }
+
+        var time = prompt("Vamos calcular os pontos do seu time, comece inserindo o nome:");
+       // var vitorias = prompt("Qual o número de vitórias do seu time?") * 1;
+       // var empates = prompt("E qual o número de empates?") * 1;
+        var vitorias = parseInt(prompt("Qual o número de vitórias do seu time?"));
+        var empates = parseInt(prompt("E qual o número de empates?"));
+        var pontos = vitorias * 3 + empates;
+
+        escreva(time + " fez " + pontos + " pontos!")
+
+        if(pontos > 45) {
+            escreva(time + " está melhor que o ano passado!");
+        }
+        if(pontos < 45) {
+            escreva(time + " está pior que o ano passado");
+        }
+        if(pontos == 45) {
+            escreva(time + " está igual ao ano passado");
+        }
+
+        var anoCopa = 1930
+        //var dataLimite = parseInt(prompt("Entre com a data limite:"));
+
+        //while(anoCopa <= dataLimite) {
+         //   escreva("Houve copa em " + anoCopa);
+         //   anoCopa = anoCopa + 4;
+        //}
+        escreva("FIM!");
+    </script>
+</body>

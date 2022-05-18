@@ -1,0 +1,34 @@
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+        function escreva(frase) {
+            document.write("<big>" + frase + "</big>");
+            pulaLinha();
+        }
+        function sorteia(n) {
+            return Math.round(Math.random() * n);
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var numero = sorteia(10);
+        console.log(numero)
+        var maximoTentativas = 3
+        var tentativaAtual = 1
+        
+        while(tentativaAtual <= maximoTentativas) {
+            var chute = parseInt(prompt("Tente adivinhar o número de 0 a 10"));
+            if(chute == numero) {
+                escreva("Parabéns, você acertou! ");
+                break
+            } else {
+                alert("Tente novamente, tentativas restantes: " + (maximoTentativas - tentativaAtual));
+            } tentativaAtual++
+        }
+        escreva("O número era " + numero + "<br><hr>FIM! Obrigado por jogar!")
+    </script>
+</body>

@@ -1,0 +1,54 @@
+<head>
+
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    
+    <script>
+
+        function pulaLinha() {
+            document.write("<br><hr>");
+        }
+
+        function mostra(frase) {
+            document.write("<big>" + frase + "</big>");
+            pulaLinha();
+        }
+
+        function calculaImc(altura, peso) {
+            return Math.round(imc = peso / (altura * 2));
+            // return Math.round(imc);
+            // mostra(Math.round(imc));
+        }
+
+        var idadeJoao = 14;
+        var idadeLucas = 19;
+        var diferencaIdades = idadeLucas - idadeJoao;
+        var ano = 2022;
+        var idadeBrasil = ano - 1500;
+
+        mostra("Eu tenho " + idadeLucas + " anos.");
+        mostra("O meu irmão mais novo, João, tem " + idadeJoao + " anos.");
+        mostra("Nossa diferença de idade é de " + diferencaIdades + " anos.");
+        pulaLinha();
+        mostra("O Brasil tem " + idadeBrasil + " anos.");
+        mostra("Já se passaram em média " + Math.round(idadeBrasil / 28) + " gerações de brasileiros.");
+        pulaLinha();
+
+        // var altura = 1.72;
+        // var peso = 70;
+        // var imc = peso / (altura * 2);
+
+        // mostra("O valor do IMC é " + Math.round(imc));
+
+        mostra("O valor do IMC de Lucas é: " + calculaImc(1.72, 70));
+        mostra("O valor do IMC de Thalía é: " + calculaImc(1.69, 68));
+        // calculaImc(1.72, 70);
+
+
+
+    </script>
+
+</body>

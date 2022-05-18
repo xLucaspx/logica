@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF8">
+</head>
+<body>
+    <canvas width="1000" height="900"></canvas>
+    <script>
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+
+        pincel.fillStyle = "pink";
+        pincel.fillRect(0, 0, 1000, 900);
+
+        var cores = ["darkblue", "darkred", "darkgreen"];
+        var indiceCorAtual = 0;
+
+        var raio = 10
+
+        function desenhaBola(evento) {
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+
+            if(evento.shiftKey && evento.altKey){
+                alert("Por favor aperte apenas uma tecla por vez!");
+            } else if(evento.shiftKey && raio + 10 <= 40) {
+                raio = raio + 10;
+            } else if(evento.altKey && raio - 5 >= 10) {
+                raio = raio - 5;
+            }
+                pincel.fillStyle = cores[indiceCorAtual];
+                pincel.beginPath();
+                pincel.arc(x, y, raio, 0, 2 * 3.14);
+                pincel.fill();
+
+            console.log("Eixo X: " + x +" Eixo Y: " + y);
+            //alert("Eixo x: " + x + " Eixo y: " + y);
+        }
+        function desenhaQuadrado(evento) {
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            pincel.fillStyle = cores[indiceCorAtual];
+            pincel.fillRect(x, y, 25, 25);
+            console.log("Eixo X: " + x +" Eixo Y: " + y);
+            //alert(x + y);
+        }
+        function trocaCor() {
+            indiceCorAtual++;
+            if(indiceCorAtual >= cores.length) {
+                indiceCorAtual = 0;
+            }
+            return false;
+        }
+
+        tela.oncontextmenu = trocaCor;
+        tela.onclick = desenhaBola;
+
+    </script>
+</body>
